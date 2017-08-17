@@ -1,0 +1,39 @@
+\begin{figure}
+
+		\centering
+\fbox{	
+	\begin{tikzpicture}
+\begin{axis}[
+	y tick  label  style={
+    /pgf/number format/1000 sep= },
+	xlabel=\rl{توان مصرف شده بر حسب کیلووات},
+	ylabel=\rl{تعداد ماشین‌های مجازی},
+	legend style={at={(0.5,-0.3)},
+	anchor=north,legend columns=-1},
+	xbar=5pt,
+	ymax=270,ymin=80,
+	      bar width=0.9em,
+	height=6cm,width=12cm,
+	   % yticklabel={\pgfmathtruncatemacro\tick{\tick}\tick},   
+	        nodes near coords,
+]
+\addplot 
+	coordinates {
+		(43,100) 
+		(51,150)
+		 (79,200) 
+		 (100,250)
+	 };
+\addplot 
+	coordinates {
+		(45,100)
+		 (52,150) 
+		(81,200)
+		 (104,250)
+	 };
+\legend{ B\_M,S\_S}
+\end{axis}
+\end{tikzpicture}}
+\caption{توان مصرف شده بر حسب کیلووات}
+\label{ch2}
+\end{figure}
