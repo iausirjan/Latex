@@ -1,0 +1,77 @@
+The Persian HM-FTX bundle of fonts offers a set of 240 Persian fonts which are
+derived from the Metafont sources provided in the FarsiTeX distribution,
+farsitex-1.0pre1, released in 2004 by Behdad Esfahbod and the accredited Irmug
+font software http://wiki.irmug.com/index.php/X_Series_2.
+
+The conversion from Metafont to TrueType has been done by a python program
+which copies the glyphs from each FarsiTeX font and pastes them to the
+corresponding font provided in X Series 2 fonts released by Behnam at
+irmug.com. However, before conversion, the following modifications were applied
+to X Series 2 fonts:
+
+   - the solid dot shape zero, ARABIC-INDIC DIGIT ZERO (uni06F0),
+     is changed to hollow circular zero.
+
+   - the glyphs with YEH ABOVE are changed to the glyphs with HAMZA ABOVE,
+     e.g. ARABIC LETTER HEH WITH YEH ABOVE ISOLATED FORM (uni06C2) has been
+     changed to ARABIC LETTER HEH WITH HAMZA ABOVE ISOLATED FORM.
+
+   - the position and height of the following glyphs are fixed:
+     emdash (uni2014), endash (uni2013), hyphenlow (uni2010), and
+     hyphentwo (NA).
+
+   - the Persian thousands separator (066C) and the Persian decimal
+     separator (066B) are fixed. 
+
+   - the following glyphs in HM_XKayhan, HM_XKayhanBd, HM_XKayhanBdIt,
+     HM_XKayhanIt, HM_XKayhanNavaar, HM_XKayhanPook, and HM_XKayhanSayeh are
+     modified :
+     exclam (uni0021), comma (uni002C), semicolon (uni003B),
+     quotesinglbase (uni201A), quotedblbase (uni201E), quoteleft (uni2018),
+     quoteright (uni2019), quotedblleft (uni201C), quotedblright (uni201D),
+     exclamdown (uni00A1), decimalseparatorpersian (NA),
+     thousandsseparatorpersian (NA), apostrophemod (uni02BC),
+     afii64937 (uni02BD), afii57388 (uni060C), uni060D,
+     afii57403 (uni061B), uni066C, quotereversed (uni201B),
+     quotedblreversed (uni201F).
+
+   - the problem with copying text from an Adobe PDF file and pasting
+     it into another file is fixed.
+
+   - the problem with substituting period with uni066C (ARABIC
+     THOUSANDS SEPARATOR) in the following font families is fixed:
+     HM_XKayhan, HM_XKhorramshahr, HM_XNiloofar, HM_XPaatch, HM_XRiyaz,
+     HM_XRoya, HM_XShafigh, HM_XShafighKurd, HM_XShafighUzbek, HM_XShiraz,
+     HM_XSols, HM_XTabriz, HM_XTitr, HM_XTraffic, HM_XVosta, HM_XYaghut,
+     HM_XYas, HM_XZar
+
+   - the problem with substituting period with uni066B (ARABIC DECIMAL
+     SEPARATOR) in the following font families is fixed:
+     HM_XVosta, HM_XYekan, HM_XYermook.
+
+   - the problem with substituting period with decimalseparatorpersian
+     in the font family HM_XZiba is fixed.
+
+   - the problem with substituting uniFEEB+afii301 with uni06BE
+     is fixed.
+
+   - the problem with substituting uniFBA8+afii301 with uni06BE
+     is fixed.
+
+These fonts are expected to work just as fine as the original X Series 2 fonts
+released by Behnam at irmug.com. A sample of all fonts are included in
+'HM_FTX-fonts-sample.pdf' file. If the fonts are installed correctly, you can
+recreate the fonts sample by invoking the command:
+"xelatex HM_FTX-fonts-sample.tex".
+
+Any comments or suggestions would be gratefully appreciated. Please use the
+persian-hm-ftx issue tracker on Bitbucket to report all bugs, issues or
+problems you find in Persian HM-FTX fonts.
+
+I will do my best to fix all the bugs you report, but, unfortunately,
+time is a big hurdle to overcome; so, my apologies in advance for those
+which I cannot make time to fix.
+
+Persian HM-FTX fonts are released under SIL Open Font License, Version 1.1.
+See OFL.txt and OFL-FAQ.txt which are also available at:
+http://scripts.sil.org/OFL
