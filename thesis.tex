@@ -1,15 +1,30 @@
 % !TeX spellcheck = fa_IR
-\documentclass[oneside]{thesis}  
-\usepackage[hidelinks]{hyperref}
-\usepackage{pgfplots}
-\usepackage{graphicx}
-\usepackage[localise=on]{xepersian}
-\usepackage{bidiftnxtra}
-\settextfont{IRLotus}
-\setdigitfont{IRLotus}
+% !TEX TS-program = XeLaTeX
+% Commands for running this example:
+% 	 xelatex main
+% 	 bibtex8 -W -c cp1256fa main
+%      xindy -L persian -C utf8 -M texindy main
+% 	 xelatex main
+% 	 xelatex main
+% End of Commands
+\documentclass[24pt,oneside,msc]{IAUSIRJAN-THESIS}  
+\include{commands}
+%\usepackage[hidelinks]{hyperref}
+%\usepackage{pgfplots}
+%\usepackage{graphicx}
+%\usepackage[localise=on]{xepersian}
+%\usepackage{bidiftnxtra}
+%\settextfont{IRLotus}
+%\setdigitfont{IRLotus}
 \begin{document}
-	\include{mainpage}
+	\include{faTitle}
 	\tableofcontents
+	\newpage
+\listoffigures \newpage
+\listoftables  \newpage
+\addcontentsline{toc}{chapter}{\listalgorithmname}
+\listofalgorithms \newpage
+	\pagenumbering{arabic}
 	\include{chapterOne_introduction}
 	\include{chapterTwo_history}
 \include{chapterThree_suggestion}
