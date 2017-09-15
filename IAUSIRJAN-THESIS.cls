@@ -372,7 +372,7 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 
 \begin{titlepage}
 \vspace{-10mm}
-{\includegraphics[height=4.5cm]{logo-en}}
+{\includegraphics[height=4.5cm]{files/iaulogo-en}}
 \centerline{\bf \@latinuniversity} 
 \large\bfseries
 \@latinfaculty\space 
