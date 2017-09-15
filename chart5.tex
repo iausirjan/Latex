@@ -1,12 +1,13 @@
 % !TeX root=thesis.tex
 \begin{figure}
+	\noindent
 		\centering
 \fbox{	
 	\begin{tikzpicture}
 \begin{axis}[
 	y tick  label  style={
     /pgf/number format/1000 sep= },
-	xlabel=\rl{توان مصرف شده بر حسب کیلووات},
+	xlabel=\rl{کیفیت سرویس نقض شده},
 	ylabel=\rl{تعداد ماشین‌های مجازی},
 	legend style={at={(0.5,-0.3)},
 	anchor=north,legend columns=-1},
@@ -16,18 +17,18 @@
 	height=6cm,width=12cm,
 		        nodes near coords,
 ]
-\addplot 
-	coordinates {(0.26,100) (0.34,150) 
-		(0.46,200) (0.63,250)};
-\addplot 
-	coordinates {(0.26,100) (0.32,150)
-		 (0.42,200) (0.62,250)};
 
+\addplot 
+	coordinates {(0.24,100) (0.30,150) 
+		(0.22,200) (0.24,250)};
+		\addplot 
+	coordinates {(0.24,100) (0.29,150)
+		 (0.2,200) (0.23,250)};
 \legend{ B\_M,S\_S}
 \end{axis}
 \end{tikzpicture}}
-\caption{مقایسه مصرف انرژی با سیاست
-\lr{MU}
+\caption{مقایسه کیفیت سرویس نقض شده در روش پیشنهادی و موردمقایسه با سیاست
+\lr{MMT}
 }
-\label{ch2}
+\label{ch5}
 \end{figure}

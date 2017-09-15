@@ -1,12 +1,12 @@
-% !TeX root=thesis.tex
 \begin{figure}
+
 		\centering
 \fbox{	
 	\begin{tikzpicture}
 \begin{axis}[
 	y tick  label  style={
     /pgf/number format/1000 sep= },
-	xlabel=\rl{توان مصرف شده بر حسب کیلووات},
+	xlabel=\rl{تعداد مهاجرت‌های صورت گرفته},
 	ylabel=\rl{تعداد ماشین‌های مجازی},
 	legend style={at={(0.5,-0.3)},
 	anchor=north,legend columns=-1},
@@ -14,20 +14,29 @@
 	ymax=270,ymin=80,
 	      bar width=0.9em,
 	height=6cm,width=12cm,
-		        nodes near coords,
+	   % yticklabel={\pgfmathtruncatemacro\tick{\tick}\tick},   
+	        nodes near coords,
 ]
 \addplot 
-	coordinates {(0.26,100) (0.34,150) 
-		(0.46,200) (0.63,250)};
+	coordinates {
+		(46,100)
+		 (52,150) 
+		(83,200)
+		 (105,250)
+	 };
 \addplot 
-	coordinates {(0.26,100) (0.32,150)
-		 (0.42,200) (0.62,250)};
+	coordinates {
+		(44,100) 
+		(51,150)
+		 (80,200) 
+		 (101,250)
+	 };
 
 \legend{ B\_M,S\_S}
 \end{axis}
 \end{tikzpicture}}
-\caption{مقایسه مصرف انرژی با سیاست
+\caption{تعداد مهاجرت‌های رخ داده با سیاست 
 \lr{MU}
-}
-\label{ch2}
+ }
+\label{ch4}
 \end{figure}
