@@ -1,24 +1,30 @@
 % !TeX spellcheck = fa_IR
 %%% !TEX TS-program = XeLaTeX
 % Commands for running this example:
-% 	 xelatex main
+% 	 xelatex thesis
 % 	 bibtex8 -W -c cp1256fa main
 %      xindy -L persian -C utf8 -M texindy main
-% 	 xelatex main
-% 	 xelatex main
+% 	 xelatex thesis
+% 	 xelatex thesis
 % End of Commands
-\documentclass[24pt,oneside,msc]{IAUSIRJAN-THESIS}  
+\documentclass[24pt,msc]{IAUSIRJAN-THESIS}  
 \include{commands}
 \begin{document}
 	\include{faTitle}
 	\tableofcontents
 	\newpage
-\listoffigures \newpage
-\listoftables  \newpage
+	\listoftables 
+	 \newpage
+\listoffigures  
+\newpage
+\listofplots
+
 %%\addcontentsline{toc}{chapter}{\listalgorithmname}
 %%\listofalgorithms \newpage
-\include{dicen2fa}
-	\pagenumbering{arabic}
+%\include{dicen2fa}
+
+	\abstractPage
+
 	\include{chapterOne_introduction}
 	\include{chapterTwo_history}
 \include{chapterThree_suggestion}

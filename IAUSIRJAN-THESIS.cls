@@ -26,6 +26,7 @@
 \def\department#1{\gdef\@department{#1}}
 \def\degree#1{\gdef\@degree{#1}}
 \def\thesisdate#1{\gdef\@thesisdate{#1}}
+\def\defencedate#1{\gdef\@defencedate{#1}}
 \newcommand{\firstsupervisor}[1]{\def\@firstsupervisor{#1}}
 \newcommand{\secondsupervisor}[1]{\def\@secondsupervisor{#1}}
 \newcommand{\firstadvisor}[1]{\def\@firstadvisor{#1}}
@@ -167,20 +168,36 @@
 \newcommand{\besmPage}{
 %% صفحه سفید
 \newpage
+\thispagestyle{empty}
+\setcounter{page}{1}
 %\pagestyle{empty}\noindent\\ 
 %% بسم الله الرحمن الرحیم
 \newpage
 \thispagestyle{empty}
 %\hfill
 \begin{center}
-\includegraphics[width=10cm]{besm}
+\includegraphics[width=10cm]{files/besm}
+\end{center}
+}
+\newcommand{\manshoor}{
+%% صفحه سفید
+\newpage
+\thispagestyle{empty}
+%\setcounter{page}{1}
+%\pagestyle{empty}\noindent\\ 
+%% بسم الله الرحمن الرحیم
+\newpage
+%\thispagestyle{empty}
+%\hfill
+\begin{center}
+\includegraphics[width=1.0\textwidth]{files/manshoor}
 \end{center}
 }
 
 %% تاییدیه هیات داوران
 \newcommand{\davaranPage}{
 \newpage
-\setcounter{page}{1}
+%%saeb%%\setcounter{page}{1}
 %\thispagestyle{empty}
 
 \begin{center}
@@ -209,24 +226,43 @@
 \newpage
 %\thispagestyle{empty}
 \begin{center}
-{\Large \titlefont
+\centerline{\includegraphics{files/iaulogo}}
+{\textbf{\titlefont\@university\\
+حوزه معاونت، پژوهش و فناوری\\
 تأییدیه‌ی صحت و اصالت نتایج \\
- }
-\vspace{.5cm}
-باسمه تعالی 
-\vspace{.5cm}
+ }}
+\vspace{.2cm}
+
+\vspace{.2cm}
 \end{center}
 \doublespacing 
-
-اینجانب 
+اینجانب
 \@name \ \@surname \ 
-به شماره دانشجویی 
-\@studentID {}
-دانشجوی رشته 
-\@subject {}
-مقطع تحصیلی 
-\@degree {}
-تأیید می‌نمایم كه كلیه‌ی نتایج این \@projectLabel{} حاصل كار اینجانب و بدون هرگونه دخل و تصرف است و موارد نسخه‌برداری‌شده از آثار دیگران را با ذكر كامل مشخصات منبع ذكر كرده‌ام. درصورت اثبات خلاف مندرجات فوق، به تشخیص دانشگاه مطابق با ضوابط و مقررات حاكم ( قانون حمایت از حقوق مؤلفان و مصنفان و قانون ترجمه و تكثیر كتب و نشریات و آثار صوتی، ضوابط و مقررات آموزشی، پژوهشی و انضباطی ... ) با اینجانب رفتار خواهد شد و حق هرگونه اعتراض درخصوص احقاق حقوق مكتسب و تشخیص و تعیین تخلف و مجازات را از خویش سلب می‌نمایم. در ضمن، مسؤولیت هرگونه پاسخگویی به اشخاص اعم از حقیقی و حقوقی و مراجع ذی‌صلاح (اعم از اداری و قضایی) به عهده‌ی اینجانب خواهد بود و دانشگاه هیچ‌گونه مسؤولیتی در این خصوص نخواهد داشت.
+ دانش آموخته مقطع 
+ \@degree {}
+ در رشته 
+ \@subject {}
+ که در 
+                \ifx\@defencedate\undefined
+                        \@thesisdate \  \ 
+                \else
+                تاریخ 
+                        \@defencedate \ \ 
+                  \fi
+                از پایان نامه خود تحت عنوان   
+             "\@title{}" \ 
+با کسب نمره\hspace*{1cm}و درجه\hspace*{3cm}
+                  دفاع نموده‎ ام بدینوسیله متعهد می شوم:
+                  \begin{enumerate}
+                  \item
+     این پایان نامه حاصل تحقیق و پژوهش انجام شده توسط اینجانب بوده و در مواردی  که از دستاوردهای علمی وپژوهشی دیگران(اعم از پایان نامه،کتاب،مقاله و ......)استفاده نموده‎ام،مطابق ضوابط ورویه موجود،نام منبع مورد استفاده وسایر مشخصات آن را درفهرست مربوطه ذکر و درج کرده ام.
+     \item
+ این پایان نامه قبلا برای دریافت هیچ مدرک تحصیلی(هم سطح،پایین تریا بالاتر) درسایر دانشگاها و موسسات آموزش عالی ارائه نشده است.
+ \item
+چنانچه بعد از فراغت از تحصیل،قصد استفاده و هر گونه بهره برداری اعم از چاپ کتاب،ثبت اختراع و ... از این پایان نامه داشته باشم،از حوزه معاونت پژوهشی واحد مجوزهای مربوطه را اخذ نمایم.
+    \item
+     چنانچه در هر مقطع زمانی خلاف موارد فوق ثابت شود،عواقب ناشی از آن را می پذیرم و واحد دانشگاهی مجاز است بااینجانب مطابق ضوابط و مقررات رفتار نموده ودر صورت ابطال مدرک تحصیلی‎ام هیچگونه ادعایی نخواهم داشت.
+     \end{enumerate}
 
 \vspace{.5cm}
 \begin{flushleft}
@@ -292,8 +328,12 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 % \thispagestyle{empty}
 % \newpage
 % }
-\newcommand\abstractPage{\newpage
+\newcommand\abstractPage{
+\newpage
+	\pagenumbering{arabic}
 \thispagestyle{empty}
+
+\addcontentsline{toc}{chapter}{چکیده}
 \vskip 15mm
 {\noindent\bfseries چکیده}
 \vspace{5mm}
@@ -305,7 +345,7 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 \noindent
 \textbf{واژگان کلیدی:} 
 \@keywords
-\newpage
+
 }
 
 % \def\latinabstract{\newpage
