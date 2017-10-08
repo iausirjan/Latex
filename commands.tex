@@ -6,6 +6,7 @@
 
 % در ورژن جدید زی‌پرشین برای تایپ متن‌های ریاضی، این سه بسته، حتماً باید فراخوانی شود
 \usepackage{amsthm,amssymb,amsmath}
+\usepackage{blindtext}
 % بسته‌ای برای تنطیم حاشیه‌های بالا، پایین، چپ و راست صفحه
 \usepackage[top=30mm, bottom=30mm, left=20mm, right=30mm]{geometry}
 % بسته‌‌ای برای ظاهر شدن شکل‌ها و تصاویر متن
@@ -51,6 +52,7 @@
 \usepackage{makeidx}
 \makeindex
 \usepackage[justification=centering]{caption}
+%\usepackage[nolot,nolof]{tocbibind}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
 \usepackage[localise]{xepersian}
@@ -126,6 +128,7 @@
 %\renewcommand{\baselinestretch}{\MATtextbaseline}
 \doublespacing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%وسط چین کردن اسم فصل ها در فهرست
 % دستوراتی برای اضافه کردن کلمه «فصل» در فهرست مطالب
 
 \newlength\mylenprt
@@ -170,8 +173,17 @@
 \DeclareFloatingEnvironment[
   fileext=lop,
   listname={فهرست نمودارها},
-  name=Plot,
+name=نمودار,
+%  name=Plot,
   placement=tp,
   %within=section,% activate it if you want
   %chapterlistsgaps=on,% only meaningful when chapters exist
 ]{plot}
+
+
+%%مخفی کردن لیست اشکال و لیست جدول‌ها از فهرست
+
+
+
+
+

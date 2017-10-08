@@ -1,5 +1,7 @@
 %%
 %%  This is file `IUST-Thesis.cls',
+%%  I changed it for Islamic Azad University Of  Sirjan 
+%% Saeb Molaee saeb@riseup.net http://sae13.ir
 %%  It is a modification  of Tabriz_thesis of Vahid Damanafshan,
 %%	by: Mahmood Amintoosi, m.amintoosi@gmail.com
 %%  http://profsite.sttu.ac.ir/mamintoosi
@@ -58,6 +60,8 @@
 \def\en-abstract#1{\gdef\@en-abstract{#1}}
 \def\latinkeywords#1{\gdef\@latinkeywords{#1}}
 \def\latinuniversity#1{\gdef\@latinuniversity{#1}}
+\def\latinbranch#1{\gdef\@latinbranch{#1}}
+\def\latinthesistype#1{\gdef\@latinthesistype{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@bscthesis
 \@bscthesisfalse
@@ -95,12 +99,12 @@
 %\topmargin=-30pt
 \vspace{-10mm}
 \centerline{{\includegraphics[width=5cm]{files/iaulogo}}}
+
 \par
 \vspace{-5mm}
-{\large\bfseries\@faculty}
+{\large\bfseries\@faculty \  \@department}
 \vskip 1.5cm
-{\huge\titlefont \@title}\par
-\vskip 5mm
+
 \if@bscthesis 
 	{\large\bfseries{پروژه کارشناسی \@subject}
 	\ifx\@field\undefined%
@@ -118,11 +122,9 @@
 	\centerline{\large \bfseries%
 		گرایش \@field}
 \fi	
+{\huge\titlefont \@title}\par
+\vskip 5mm
 \vskip 1cm
-\par
-{\Large\bfseries{\large\bfseries   \@name\ \ \@surname}}
-\par
-\vskip 15mm
 \large
 {
 \ifx\@firstsupervisor\undefined%
@@ -131,11 +133,13 @@
 	\fi
 \else
 \ifx\@secondsupervisor\undefined%
+{\large\bfseries
 استاد راهنما
+}
 {\Large\bfseries\par
 \@firstsupervisor}
 \else
-\large
+\Large\
 اساتید راهنما
 \par
 {\Large\bfseries \@firstsupervisor{} و \@secondsupervisor}
@@ -158,6 +162,14 @@
 \fi\fi}
 
 \par
+\par
+{\Large\bfseries{\large\bfseries
+نگارش
+
+   \@name\ \ \@surname}}
+\par
+\vskip 15mm
+
 \vskip 6mm
 %\vfill
 {\large \@thesisdate}
@@ -329,10 +341,8 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 % \newpage
 % }
 \newcommand\abstractPage{
-\newpage
-	\pagenumbering{arabic}
+\pagenumbering{arabic}
 \thispagestyle{empty}
-
 \addcontentsline{toc}{chapter}{چکیده}
 \vskip 15mm
 {\noindent\bfseries چکیده}
@@ -415,34 +425,36 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 {\includegraphics[height=4.5cm]{files/iaulogo-en}}
 \centerline{\bf \@latinuniversity} 
 \large\bfseries
-\@latinfaculty\space 
+\@latinbranch\space Branch
+
+
+Faculty of\space\@latinfaculty\space Department of\space\@latinsubject
+
+\@latinthesistype
 \vskip 1cm
 {%\latintitlefont 
 \Huge
 \@latintitle}
 %\baselineskip=.750cm \par
 \vskip 15mm
-{
-\large
-\if@bscthesis 
-    Bachelor of Science Thesis
-	in  \@latinsubject 
-\else
-	A Thesis Submitted in Partial Fulfillment of the Requirement for the Degree of 
-	 \if@mscthesis
-	Master of Science
-	\else
-	 Doctor of Philosophy
-	\fi
-	in  \@latinsubject 
+%{
+%\large
+%\if@bscthesis 
+   % Bachelor of Science Thesis
+%	in  \@latinsubject 
+%\else
+%	A Thesis Submitted in Partial Fulfillment of the Requirement for the Degree of 
+%	 \if@mscthesis
+%	Master of Science
+%	\else
+%	 Doctor of Philosophy
+%	\fi
+%	in  \@latinsubject 
 	%\baselineskip=.750cm
 	%\addtolength{\baselineskip}{-5mm}
-\fi
-}
-\vskip 15mm
-{\bfseries\latinby}\par
-{\large %\supervisorfont
-\rm\@latinname \; \@latinsurname}\par
+%\fi
+%}
+
 
 \vskip 15mm
 
@@ -452,12 +464,12 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 \else\fi
 \else
 \ifx\@secondlatinsupervisor\undefined%
-Supervisor:
+Thesis Advisor :
 {\Large\bfseries\par
 \@firstlatinsupervisor}
 \else
 \large
-Supervisors:
+Thesis Advisors:
 \par
 {\Large\bfseries \@firstlatinsupervisor{} and \@secondlatinsupervisor}
 \fi\fi}
@@ -468,13 +480,13 @@ Supervisors:
 \else\fi
 \else
 \ifx\@secondlatinadvisor\undefined%
-Advisor:
+Consulting Advisor:
 {\Large\bfseries\par
 \@firstlatinadvisor}
 \else
 
 \large
-Advisors:
+Consulting Advisors:
 \par
 {\Large\bfseries\@firstlatinadvisor{} and \@secondlatinadvisor}
 \fi\fi}
@@ -482,7 +494,10 @@ Advisors:
 
 \par
 \vskip 1cm
-
+%\vskip 15mm
+{\bfseries\latinby}\par
+{\large %\supervisorfont
+\rm\@latinname \; \@latinsurname}\par
 {\@latinthesisdate}
 \par
 \vskip 1cm
@@ -503,6 +518,24 @@ Advisors:
 \thispagestyle{empty}
 \newpage
 \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+
+
+%%%مخفی کردن لیست شکل ها در فهرست
+\makeatletter
+
+\renewcommand*\chapter@toc{%
+\ifHeadingNumbered\typeout{\@chapapp\space\thechapter.}%\fi
+\addcontentsline{toc}{chapter}{%
+    %\ifHeadingNumbered
+    \mw@seccntformat{\@chapapp\ \HeadingNumber}\HeadingTOCText%
+    %\fi
+    }\fi %added \fi here
+%\addtocontents{lof}{\protect\addvspace{10\p@}}%
+%\addtocontents{lot}{\protect\addvspace{10\p@}}%
+}
+
+\makeatother
 
 %% M.Amintoosi
 %% 
