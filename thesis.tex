@@ -7,8 +7,14 @@
 % 	 xelatex thesis
 % 	 xelatex thesis
 % End of Commands
-\documentclass[14pt,msc,oneside]{IAUSIRJAN-THESIS}  
+\documentclass[12pt,msc,oneside]{IAUSIRJAN-THESIS}  
 \include{commands}
+\newcommand{\mychapter}[2]{
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+}
 \begin{document}
 	\include{faTitle}
 	\tableofcontents
