@@ -17,6 +17,7 @@
 %%   http://forum.parsilatex.com
 %% 
 %% 
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{VThesis}
               [10/21/2011 v0.4

@@ -56,16 +56,9 @@
 %\usepackage[nolot,nolof]{tocbibind}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{newfloat}
-\SepMark{-}
-\DeclareFloatingEnvironment[
-  fileext=lop,
-  listname={فهرست نمودارها},
-name=نمودار,
-placement=tp,
-]{plot}
-\SepMark{-}
+
 % فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
-\usepackage[localise]{xepersian}
+\usepackage[localise,extrafootnotefeatures]{xepersian}
 %فونت لوتوس Lotus یا BLotus علاوه بر مشخص نبودن نوع مجوز آن‌ها، قدیمی و پر از عیب و ایراد هستند. به همین دلیل از فونت آزاد HM FLotoos استفاده می‌کنیم
 \settextfont[Scale=1.1]{HM FLotoos}%HM FLotoos
 \usepackage{bidiftnxtra}
@@ -74,10 +67,10 @@ placement=tp,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
-\setdigitfont[Scale=1.1]{B Lotus}%{Persian Modern}
+\setdigitfont[Scale=1.1]{HM FLotoos}%{Persian Modern}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
-\defpersianfont\titlefont[Scale=1]{B Lotus}%HM FLotoos
+\defpersianfont\titlefont[Scale=1]{HM FLotoos}%HM FLotoos
 % \defpersianfont\iranic[Scale=1.1]{XB Zar Oblique}%Italic}%
 % \defpersianfont\nastaliq[Scale=1.2]{IranNastaliq}
 
@@ -177,7 +170,7 @@ placement=tp,
    \sloppy
    \sfcode`\.=1000\relax}}
 \makeatother
-\SepMark{-}
+
 
 %%%ساخت فهرست نمودارها
 
@@ -225,7 +218,27 @@ placement=tp,
     \endgroup
   \fi}
 \makeatother
-%%%%%%%
+%%%%%%%تعریف لیست نمودارها
 
 \SepMark{-}
+\DeclareCaptionType{curve}[نمودار][فهرست نمودارها]
+
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname\@SepMark\quad}
+
+\renewcommand{\cftsecaftersnum}{\@SepMark}%
+\renewcommand{\cftsubsecaftersnum}{\@SepMark}%
+\renewcommand{\cftsubsubsecaftersnum}{\@SepMark}%
+
+\renewcommand*\l@section{\@dottedtocline{1}{2.5em}{2.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.5em}{3.5em}} 
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{4.8em}{4.8em}} 
+
+\setlength{\cftfignumwidth}{12mm}
+\setlength{\cfttabnumwidth}{12mm}
+
+\makeatother
+
+\DeclareCaptionLabelSeparator{colon}{\ } 
+\captionsetup{belowskip=20pt,aboveskip=10pt}
 
