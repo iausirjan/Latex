@@ -47,11 +47,11 @@
 
 
 % بسته‌ای برای ظاهر شدن «مراجع» و «نمایه» در فهرست مطالب
-\usepackage[nottoc]{tocbibind}
+%\usepackage[nottoc]{tocbibind}
 % دستورات مربوط به ایجاد نمایه
 \usepackage{makeidx}
 \makeindex
-\usepackage[justification=centering]{caption}
+\usepackage[font=Large,justification=centering]{caption}
 %\usepackage[nolot,nolof]{tocbibind}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
@@ -87,6 +87,8 @@
 % تعریف دستور جدید «\پ» برای خلاصه‌نویسی جهت نوشتن عبارت «پروژه/پایان‌نامه/رساله»
 \newcommand{\پ}{پروژه/پایان‌نامه/رساله }
 
+%دستوری برای نوشتن با سایز ۱۴ و بولد
+\newcommand{\bfLarge}{\Large\textbf}
 %\newcommand\BackSlash{\char`\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,9 +183,47 @@ name=نمودار,
 ]{plot}
 
 
-%%مخفی کردن لیست اشکال و لیست جدول‌ها از فهرست
+%تنظیم هدر و فوتر 
+\fancypagestyle{foot2}{
+\fancyhead{}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+}
+\pagestyle{foot2}
 
+% تنظیم فایل سرفصل
+\usepackage{titlesec}
+ \titleformat{\chapter}[display]
+{\vspace{-3cm}\vfill\filcenter}
+{{%
+   \vspace{-3cm}\filcenter\fontsize{48pt}{48pt}\selectfont{\chaptername}
+   \fontsize{48pt}{48pt}\selectfont\thechapter%
+ }%
+}
+{50pt}
+{\fontsize{30pt}{30pt}\selectfont%
+}[\vfill \thispagestyle{empty}\clearpage]
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
+%%%%%%وسط‌چین کردن فصل‌ها در فهرست مطالب
+\usepackage{blindtext}
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty\@secpenalty
+    \addvspace{1.0em \@plus\p@}%
+    \setlength\@tempdima{1.8em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      \hfil#1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{}\par
+    \endgroup
+  \fi}
+\makeatother
+%%%%%%%
 
 
 

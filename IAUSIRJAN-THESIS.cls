@@ -86,7 +86,7 @@
 \ifx\@degree\undefined%
 {
 \if@mscthesis
-\degree{کارشناسی ارشد M.SC}
+\degree{کارشناسی ارشد M.Sc}
 \else
 \if@bscthesis
 \degree{کارشناسی}
@@ -98,15 +98,17 @@
 \newcommand{\firstPage}{\begin{titlepage}
 %\topmargin=-30pt
 \vspace{-10mm}
-\centerline{{\includegraphics[width=5cm]{files/iaulogo}}}
+\centerline{{\includegraphics[width=5cm]{files/iau}}}
 
 \par
-\vspace{-5mm}
-{\large\bfseries\@faculty \  \@department}
+%\vspace{-35mm}
+\bfLarge{\@university}
+\par
+{\bfLarge{\@faculty \  \@department}}
 \vskip 1.5cm
 
 \if@bscthesis 
-	{\large\bfseries{پروژه کارشناسی \@subject}
+	{\Large\bfseries{پروژه کارشناسی \@subject}
 	\ifx\@field\undefined%
 		\relax
 	\else
@@ -114,15 +116,16 @@
 	\fi
 	}
 \else
-	{\large\bfseries \@projectLabel\ \ \writtenfor
+	{\Large\bfseries \@projectLabel\ \writtenfor
 	\@degree{} \newline
 	}
-	{\large\bfseries{در رشته \@subject}}
+%	{\large\bfseries{در رشته \@subject}}
 	\vskip .2cm
-	\centerline{\large \bfseries%
+	\centerline{\Large \bfseries%
 		گرایش \@field}
 \fi	
-{\huge\titlefont \@title}\par
+	\vskip .2cm
+{\LARGE\textbf\titlefont \@title}\par
 \vskip 5mm
 \vskip 1cm
 \large
@@ -343,19 +346,18 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 \newcommand\abstractPage{
 \pagenumbering{arabic}
 \thispagestyle{empty}
-\addcontentsline{toc}{chapter}{چکیده}
+\addcontentsline{toc}{section}{چکیده}
 \vskip 15mm
 {\noindent\bfseries چکیده}
 \vspace{5mm}
 \par
 \noindent
 \@fa-abstract
-\vspace{8mm}
+%\vspace{8mm}
 \par
 \noindent
 \textbf{واژگان کلیدی:} 
 \@keywords
-
 }
 
 % \def\latinabstract{\newpage
@@ -422,7 +424,7 @@ $\Box$ بهره‌برداری از این پایان‌نامه تا تاریخ
 
 \begin{titlepage}
 \vspace{-10mm}
-{\includegraphics[height=4.5cm]{files/iaulogo-en}}
+{\includegraphics[height=4.5cm]{files/iau}}
 \centerline{\bf \@latinuniversity} 
 \large\bfseries
 \@latinbranch\space Branch
@@ -521,21 +523,6 @@ Consulting Advisors:
 
 
 
-%%%مخفی کردن لیست شکل ها در فهرست
-\makeatletter
-
-\renewcommand*\chapter@toc{%
-\ifHeadingNumbered\typeout{\@chapapp\space\thechapter.}%\fi
-\addcontentsline{toc}{chapter}{%
-    %\ifHeadingNumbered
-    \mw@seccntformat{\@chapapp\ \HeadingNumber}\HeadingTOCText%
-    %\fi
-    }\fi %added \fi here
-%\addtocontents{lof}{\protect\addvspace{10\p@}}%
-%\addtocontents{lot}{\protect\addvspace{10\p@}}%
-}
-
-\makeatother
 
 %% M.Amintoosi
 %% 
