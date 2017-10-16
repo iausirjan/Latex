@@ -55,6 +55,15 @@
 \usepackage[font=Large,justification=centering]{caption}
 %\usepackage[nolot,nolof]{tocbibind}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{newfloat}
+\SepMark{-}
+\DeclareFloatingEnvironment[
+  fileext=lop,
+  listname={فهرست نمودارها},
+name=نمودار,
+placement=tp,
+]{plot}
+\SepMark{-}
 % فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
 \usepackage[localise]{xepersian}
 %فونت لوتوس Lotus یا BLotus علاوه بر مشخص نبودن نوع مجوز آن‌ها، قدیمی و پر از عیب و ایراد هستند. به همین دلیل از فونت آزاد HM FLotoos استفاده می‌کنیم
@@ -93,7 +102,8 @@
 %\newcommand\BackSlash{\char`\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\SepMark{-}
+
+
 
 % تعریف و نحوه ظاهر شدن عنوان قضیه‌ها، تعریف‌ها، مثال‌ها و ...
 \theoremstyle{definition}
@@ -167,21 +177,12 @@
    \sloppy
    \sfcode`\.=1000\relax}}
 \makeatother
-
+\SepMark{-}
 
 %%%ساخت فهرست نمودارها
-\usepackage{newfloat}
 
 
-\DeclareFloatingEnvironment[
-  fileext=lop,
-  listname={فهرست نمودارها},
-name=نمودار,
-%  name=Plot,
-  placement=tp,
-  %within=section,% activate it if you want
-  %chapterlistsgaps=on,% only meaningful when chapters exist
-]{plot}
+
 
 
 %تنظیم هدر و فوتر 
@@ -226,5 +227,5 @@ name=نمودار,
 \makeatother
 %%%%%%%
 
-
+\SepMark{-}
 
